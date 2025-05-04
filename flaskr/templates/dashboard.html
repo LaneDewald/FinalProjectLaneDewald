@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cyber Threat Intelligence Dashboard</title>
+</head>
+<body>
+    <h1>Cyber Threat Intelligence Dashboard</h1>
+    <h2>Top Threat Categories</h2>
+    <ul>
+        {% for threat, count in common_threats.items() %}
+            <li>{{ threat }}: {{ count }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Threat Frequency Spikes</h2>
+    <ul>
+        {% for date, spike in spikes.items() %}
+            <li>{{ date }}: {{ spike }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Indicators of Compromise</h2>
+    <table>
+        <tr>
+            <th>Indicator</th>
+            <th>Threat Type</th>
+            <th>Date</th>
+            <th>Cluster</th>
+        </tr>
+        {% for row in data %}
+            <tr>
+                <td>{{ row['indicator'] }}</td>
+                <td>{{ row['threat_type'] }}</td>
+                <td>{{ row['date'] }}</td>
+                <td>{{ row['cluster'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
