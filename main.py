@@ -36,3 +36,30 @@ def analyze_data(data):
         data['cluster'] = clusters
     return common_threats, spikes, data
 
+
+# Visualization Dashboard
+def display_dashboard(common_threats, spikes, data):
+    st.title("Cyber Threat Intelligence Dashboard")
+
+    st.header("Top Threat Categories")
+    st.bar_chart(common_threats)
+
+    st.header("Threat Frequency Spikes")
+    st.line_chart(spikes)
+
+    st.header("Indicators of Compromise")
+    st.dataframe(data[['indicator', 'threat_type', 'date', 'cluster']])
+
+    st.sidebar.header("Filters")
+    date_filter = st.sidebar.date_input("Date")
+    severity_filter = st.sidebar.selectbox("Severity", options=data['severity'].unique())
+    region_filter = st.sidebar.selectbox("Region", options=data['region'].unique())
+    type_filter = st.sidebar.selectbox("Type", options=data['threat_type'].unique())
+
+    filtered_data = data[
+        (data['date'] == date_filter) &
+        (data['severity'] == severity_filter) &
+        (data['region'] == region_filter) &
+        (data['threat_type'] == type_filter)
+    ]
+    st.dataframe(filtered_data)
