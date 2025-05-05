@@ -10,8 +10,9 @@ student’s area of study and
 concentration, clearly
 integrating knowledge from
 both areas
-Project is a web-based application that collects, analyzes, and visualizes real-time or historical cybersecurity threat data using Python frameworks and libraries. 
-This tool will assist security analysts and students in identifying trends in malware, phishing campaigns, and vulnerability reports.
+Project is a web-based application that collects, analyzes, and visualizes generates threat data using Python frameworks and libraries. 
+This tool will simulate grouping of to show how you could use a similar program to assist security analysts and students 
+in identifying trends in malware, phishing campaigns, and vulnerability reports.
 
 ## Getting Started
 
@@ -26,8 +27,7 @@ pip intall -r requirements.txt
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
+Run off main.py then click on the address to take you to the page there you will see the generated content
 ```
 code blocks for commands
 ```
@@ -41,16 +41,9 @@ command to run if program contains helper info
 
 ## Authors
 
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+Lane Dewald
 
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+Advance Python Course Material 
