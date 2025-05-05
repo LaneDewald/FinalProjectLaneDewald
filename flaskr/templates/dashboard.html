@@ -3,38 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <title>Cyber Threat Intelligence Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Cyber Threat Intelligence Dashboard</h1>
-    <h2>Top Threat Categories</h2>
-    <ul>
-        {% for threat, count in common_threats.items() %}
-            <li>{{ threat }}: {{ count }}</li>
-        {% endfor %}
-    </ul>
-    <h2>Threat Frequency Spikes</h2>
-    <ul>
-        {% for date, spike in spikes.items() %}
-            <li>{{ date }}: {{ spike }}</li>
-        {% endfor %}
-    </ul>
-    <h2>Indicators of Compromise</h2>
-    <table>
-        <tr>
-            <th>Indicator</th>
-            <th>Threat Type</th>
-            <th>Date</th>
-            <th>Cluster</th>
-        </tr>
-        {% for row in data %}
-            <tr>
-                <td>{{ row['indicator'] }}</td>
-                <td>{{ row['threat_type'] }}</td>
-                <td>{{ row['date'] }}</td>
-                <td>{{ row['cluster'] }}</td>
-            </tr>
-        {% endfor %}
-    </table>
+    <div class="container mt-5">
+        <h1 class="text-center">Cyber Threat Intelligence Dashboard</h1>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2>Top Threat Categories</h2>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    {% for threat, count in common_threats.items() %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {{ threat }}
+                            <span class="badge badge-primary badge-pill">{{ count }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2>Threat Frequency Spikes</h2>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    {% for date, spike in spikes.items() %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {{ date }}
+                            <span class="badge badge-warning badge-pill">{{ spike }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2>Indicators of Compromise</h2>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Indicator</th>
+                            <th>Threat Type</th>
+                            <th>Date</th>
+                            <th>Cluster</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in data %}
+                            <tr>
+                                <td>{{ row['indicator'] }}</td>
+                                <td>{{ row['threat_type'] }}</td>
+                                <td>{{ row['date'] }}</td>
+                                <td>{{ row['cluster'] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
 

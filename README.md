@@ -47,3 +47,4 @@ Lane Dewald
 
 Inspiration, code snippets, etc.
 Advance Python Course Material 
+Microsoft Copilot https://copilot.cloud.microsoft/?fromCode=cmcv2&redirectId=74CFBCBBF570497886DD1A7E06775269&auth=2
