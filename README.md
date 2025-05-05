@@ -20,10 +20,6 @@ in identifying trends in malware, phishing campaigns, and vulnerability reports.
 ```
 pip intall -r requirements.txt
 ```
-### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
 
 ### Executing program
 
